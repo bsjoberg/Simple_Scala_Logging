@@ -1,7 +1,11 @@
-import com.typesafe.scalalogging.{LazyLogging, Logger}
+import com.typesafe.scalalogging.{LazyLogging}
 
 object LoggingTutorial extends App with LazyLogging {
-  logger.info("Hello there!")
-  logger.debug("Hello there!")
-  logger.error("Hello there!")
+
+
+  def logMessages(): Unit = {
+    logger.info("Hello there!")
+    logger.debug("Hello there!")
+    logger.error("Hello there!")
+  }
 }

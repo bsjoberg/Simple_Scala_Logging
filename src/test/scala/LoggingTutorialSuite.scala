@@ -1,9 +1,12 @@
 import java.io.FileInputStream
+import java.nio.file.{Files, Paths}
 import java.util.Properties
 
 import org.junit.runner.RunWith
 import org.scalatest.FunSuite
 import org.scalatestplus.junit.JUnitRunner
+
+import scala.io.Source
 
 @RunWith(classOf[JUnitRunner])
 class LoggingTutorialSuite extends FunSuite {
@@ -23,7 +26,8 @@ class LoggingTutorialSuite extends FunSuite {
   }
 
   test("Logging tutorial file was created") {
-
+    LoggingTutorial.logMessages()
+    assert(Files.exists(Paths.get("target/test.log")))
   }
 
   test("Logging tutorial log info error debug messages") {
